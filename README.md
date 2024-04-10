@@ -24,3 +24,5 @@
 - Spy - (spyk) Spy é utilizado quando precisamos mesclar mocks coms os objetos reais (Permite utilizar o verify nesses objetos e o every)
 - Capturing - É uma funcionalidade utilizada para obter um valor a partir de uma chamada que é mockada
 - Mockando funções privadas - Utilizando o spyk passando o parâmetro recordPrivateCalls = true, permite utilizar o every mockando as chamadas à métodos privados
+
+- Spies, mockkStatic may not work on JDK 16+;
