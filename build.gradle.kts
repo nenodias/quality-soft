@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val mockkVersion = "1.13.10"
+
 plugins {
 	id("org.springframework.boot") version "3.2.4"
 	id("io.spring.dependency-management") version "1.1.4"
@@ -37,7 +39,7 @@ dependencies {
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.mockk:mockk:1.13.9")
+	testImplementation("io.mockk:mockk:$mockkVersion")
 }
 
 tasks.withType<KotlinCompile> {
