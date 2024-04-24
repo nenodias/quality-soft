@@ -6,6 +6,8 @@ import io.mockk.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import java.io.*
+import java.lang.RuntimeException
+import kotlin.reflect.typeOf
 
 class CreatePersonServiceTest {
 
@@ -42,5 +44,13 @@ class CreatePersonServiceTest {
             myMock.canWrite()
             myMock.canRead()
         }
+        var ex: Exception? = null
+        try {
+            myMock.exists()
+        } catch (e: FileNotFoundException) {
+            ex = e
+        }
+        assert(FileNotFoundException::class.isInstance(ex))
     }
+
 }
