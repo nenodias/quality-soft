@@ -32,6 +32,7 @@ class CreatePersonServiceTest {
         every { myMock.canRead() } returns true
         every { myMock.canWrite() } answers { false }
         every { myMock.deleteOnExit() } just runs
+        every { myMock.exists() } throws FileNotFoundException("File not found")
 
         myMock.deleteOnExit()
         myMock.canRead()
